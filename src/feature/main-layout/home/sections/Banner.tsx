@@ -33,7 +33,7 @@ const Banner: React.FC = () => {
         },
       }}
     >
-      <section className="relative w-full bg-linear-to-b from-[#B1E5EE] to-[#FFFFFF] overflow-hidden   min-h-screen flex items-center justify-center ">
+      <section className="relative w-full bg-linear-to-b from-[#B1E5EE] to-[#FFFFFF] overflow-hidden pt-12 lg:pt-0  lg:max-h-[calc(100vh-73px)] flex items-center justify-center ">
         <div className="container">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 ">
             {/* Left Content */}
@@ -56,7 +56,7 @@ const Banner: React.FC = () => {
                   What service do you need?
                 </h2>
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <div className="flex flex-1 flex-col overflow-hidden rounded-lg border border-[#005B6F]/20 bg-transparent sm:flex-row ">
+                  <div className="flex flex-1  overflow-hidden rounded-lg border border-[#005B6F]/20 bg-transparent  ">
                     <div className="flex-1 border-b border-[#005B6F]/20 sm:border-b-0 sm:border-r">
                       <Input
                         placeholder="House cleaning, Gardening"
