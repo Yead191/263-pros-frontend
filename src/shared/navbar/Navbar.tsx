@@ -60,7 +60,7 @@ export default function Navbar() {
       `}
     >
       <div
-        className={`container mx-auto px-4  py-4 transition-colors duration-300`}
+        className={`container mx-auto px-4  py-5 transition-colors duration-300`}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -82,7 +82,7 @@ export default function Navbar() {
                 href={item.href}
                 className={`text-sm lg:text-xs 2xl:text-sm transition-all duration-300 ${
                   item.href === pathname
-                    ? "relative font-semibold px-8 py-2 rounded-full text-white bg-[#00BCD133] backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+                    ? "relative font-semibold px-4 py-2 rounded-full text-white bg-[#00BCD133] backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                     : "text-white/80 hover:text-white"
                 }`}
                 style={{
