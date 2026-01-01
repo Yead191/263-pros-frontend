@@ -15,12 +15,12 @@ export default async function Footer() {
     <footer className="pt-16 lg:pt-20 bg-[#E6F8F3] ">
       <div className="container flex flex-col items-center justify-center">
         <Image
-          src="/Logo.png"
-          alt="VIAJIA Logo"
-          width={400}
-          height={200}
+          src="/Logo2.png"
+          alt="Logo"
+          width={1200}
+          height={1200}
           draggable={false}
-          className="h-fit lg:h-52 w-fit mb-10"
+          className="h-fit lg:h-28 w-fit mb-10"
         />
         {/* Navigation Links */}
         <div className="flex flex-wrap gap-4 lg:gap-6 text-xs lg:text-sm text-black/80 mb-8 md:mb-10 items-center justify-center">
@@ -36,7 +36,7 @@ export default async function Footer() {
         </div>
         {/* Bottom copyright */}
         <div className="text-center  text-sm text-black/70 border-t border-[#37373A] w-full py-4">
-          © 2025 Viajia. All rights reserved.
+          © 2025 263 Pros. All rights reserved.
         </div>
       </div>
     </footer>

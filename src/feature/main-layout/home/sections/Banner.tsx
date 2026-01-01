@@ -1,36 +1,102 @@
+"use client";
+
+import React, { useState } from "react";
+import { Input, Button, Form, ConfigProvider } from "antd";
 import Image from "next/image";
-import React from "react";
+import { MapPin, Search } from "lucide-react";
 
-export default async function Banner() {
+const Banner: React.FC = () => {
+  const [form] = Form.useForm();
+
+  const handleSearch = (values: any) => {
+    console.log("Search values:", values);
+  };
+
   return (
-    <div
-      id="banner"
-      style={{
-        backgroundImage: "url('/assets/images/home/banner_bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#005B6F",
+          borderRadius: 8,
+          colorTextBase: "#1f2937",
+        },
+        components: {
+          Button: {
+            controlHeight: 48,
+            fontSize: 16,
+            fontWeight: 600,
+          },
+          Input: {
+            controlHeight: 48,
+            fontSize: 16,
+          },
+        },
       }}
-      className="pt-32 md:pt-0  md:min-h-screen flex flex-col items-center justify-end"
     >
-      <div className="lg:max-w-[700px]  2xl:max-w-[900px] mx-auto text-center lg:mt-40 2xl:mt-[260px] px-4 lg:px-5">
-        <h1 className="font-semibold mb-8 leading-[120%] text-4xl lg:text-5xl 2xl:text-6xl   ">
-          Welcome to 263 PROS
-        </h1>
+      <section className="relative w-full bg-linear-to-b from-[#B1E5EE] to-[#FFFFFF] overflow-hidden   min-h-screen flex items-center justify-center ">
+        <div className="container">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 ">
+            {/* Left Content */}
+            <div className="w-full lg:w-1/2 flex flex-col items-start text-start">
+              <h1 className="text-4xl lg:text-5xl   font-semibold text-primary leading-tight mb-6 tracking-wide">
+                Find & Book Trusted Service Providers{" "}
+                <span className="font-playfair italic font-normal text-primary">
+                  Across Zimbabwe
+                </span>
+              </h1>
 
-        <p className="text-sm lg:text-base  2xl:text-lg lg:max-w-[900px]">
-          The best way to shop for your next car
-        </p>
-        <div className="flex justify-end">
-          <Image
-            src={"/assets/images/home/banner-phone.png"}
-            alt="Phone Image"
-            width={1320}
-            height={600}
-            draggable={false}
-            className="w-full  h-full object-contain mx-auto mt-6"
-          />
+              <p className="text-[#525252] text-lg lg:text-xl mb-12 max-w-lg">
+                Connect with verified service providers, receive tailored
+                proposals, and book with confidence.
+              </p>
+
+              {/* Search Section */}
+              <div className="space-y-4">
+                <h2 className="text-xl font-semibold text-gray-900">
+                  What service do you need?
+                </h2>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <div className="flex flex-1 flex-col overflow-hidden rounded-lg border border-[#005B6F]/20 bg-transparent sm:flex-row ">
+                    <div className="flex-1 border-b border-[#005B6F]/20 sm:border-b-0 sm:border-r">
+                      <Input
+                        placeholder="House cleaning, Gardening"
+                        variant="borderless"
+                        className="w-full"
+                      />
+                    </div>
+                    <div className="flex flex-[0.8] items-center">
+                      <Input
+                        placeholder="Avondale, Harare"
+                        variant="borderless"
+                        prefix={<MapPin className="text-[#005B6F]" />}
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+                  <Button type="primary" icon={<Search />} className="sm:px-8">
+                    Search
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Illustration */}
+            <div className="w-full lg:w-1/2 flex items-center justify-center">
+              <div className="relative w-full aspect-4/3 lg:aspect-square">
+                <Image
+                  src="/assets/images/home/banner.png"
+                  alt="Service Providers Illustration"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </ConfigProvider>
   );
-}
+};
+
+export default Banner;
